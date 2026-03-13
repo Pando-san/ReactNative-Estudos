@@ -1,0 +1,31 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import HomeScreen from "./screens/home";
+import AboutScreen from "./screens/about";
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen}
+                options={{
+                    headerTintColor: "white",
+                    headerStyle: {backgroundColor: "tomato"},
+                }} 
+                />
+
+                <Stack.Screen name="About" component={AboutScreen} 
+                options={{
+                    headerTintColor: "white",
+                    headerStyle: {backgroundColor: "tomato"},
+                }}/>
+
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+export default App;
